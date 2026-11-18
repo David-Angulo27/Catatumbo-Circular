@@ -3,6 +3,7 @@
  * Originales en "imagenes proyecto", convertidas a WebP y redimensionadas para la web.
  * Son imágenes ilustrativas del territorio y del contexto; los derechos pertenecen a sus autores.
  */
+import { asset } from '../lib/asset';
 export interface Photo {
   src: string;
   alt: string;
@@ -11,7 +12,7 @@ export interface Photo {
   caption?: string;
 }
 
-const img = (name: string) => `${import.meta.env.BASE_URL}img/${name}.webp`;
+const img = (name: string) => asset(`img/${name}.webp`);
 
 export const photos = {
   tibuPaisaje: {
